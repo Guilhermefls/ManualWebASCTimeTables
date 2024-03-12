@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('conteudo')
+@section('content')
     <section class="container p-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
