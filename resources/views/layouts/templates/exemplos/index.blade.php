@@ -1,7 +1,0 @@
-@includeIf('templates.header')
-@includeIf('templates.assets')
-@includeIf('templates.services')
-@includeIf('templates.about')
-@includeIf('templates.team')
-@includeIf('templates.clients')
-@includeIf('templates.contact')
