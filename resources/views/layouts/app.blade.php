@@ -56,9 +56,7 @@
 											<span class="opener">Restrições</span>
 											<ul>
 												<li><a href="/Templates/turmas.html">Turmas</a></li>
-												<li><a href="/Templates/salas.html">Salas</a></li>
-												<li><a href="/Templates/professores.html">Professores</a></li>
-												<li><a href="/Templates/disciplinas.html">Disciplinas</a></li>
+												
 											</ul>
 
 										</li>
