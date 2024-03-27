@@ -15,8 +15,17 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('public.Templates.index');
 })->name('welcome');
+
+Route::get('/manual', function () {
+    $manuais=\App\Models\Post::all();
+    return view('manuais.listagem',compact('manuais'));
+})->name('manuais');
+
+Route::get('/professores', function () {
+    return view('manuais.professores');
+})->name('professores');
 
 
 Route::resource('postagens', PostController::class)->only([
