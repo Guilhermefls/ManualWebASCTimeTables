@@ -15,7 +15,7 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', function () {
-    return view('public.Templates.index');
+    return view('welcome');
 })->name('welcome');
 
 Route::get('/manual', function () {
