@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,15 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/manual', function () {
-    $manuais=\App\Models\Post::all();
-    return view('manuais.listagem',compact('manuais'));
-})->name('manuais');
-
 Route::get('/professores', function () {
     return view('manuais.professores');
 })->name('professores');
 
+
+Route::get('/categorias', [CategoryController::class, 'index'])->name('categorias');
+
+Route::get('/postagens/manuais',[PostController::class, 'buscarPorConteudo'])->name('postagens.buscar');
 
 Route::resource('postagens', PostController::class)->only([
     'index', 'show'
@@ -40,7 +40,4 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-/*
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::view('home', 'home')->name('home');
-});//*/
+

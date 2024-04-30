@@ -12,3 +12,13 @@ ol img{
 .restricao{
     background-color:#f5f5f5;
 }
+.formBusca{
+    position: relative;
+}
+
+#btnBusca{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: blue;
+}

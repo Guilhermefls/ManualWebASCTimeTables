@@ -102,6 +102,19 @@ class PostController extends Controller
 
         return view('postagens.browse', compact('postagens'));
     }
+    public function buscarPorConteudo (Request $request) {
+        //obtem o value do input com o name="filtro"
+        $termoDeBusca = $request->input('query');
+
+        //obter a postagem do banco de dados com o id = $id
+        $postagens = \App\Models\Post::publicados()
+        ->when($termoDeBusca, function ($query, $termoDeBusca) {
+            return $query->where('body', 'like', '%'.$termoDeBusca.'%');
+        })
+        ->paginate();
+
+        return view('manuais.listagem', compact('postagens'));
+    }
 
     public function publicar ($id) {
 

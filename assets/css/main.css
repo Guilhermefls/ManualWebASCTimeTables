@@ -1899,7 +1899,7 @@ button,
     text-transform: none !important;
     font-family: 'Font Awesome 5 Free';
     font-weight: 900; }
-    #search form:before {
+  #search form:before {
     -moz-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     -ms-transform: scaleX(-1);

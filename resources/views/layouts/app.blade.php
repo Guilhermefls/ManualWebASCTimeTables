@@ -8,7 +8,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{asset('assets/css/main.css')}}" />
 		<link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
-	</head>
+
+    </head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -42,7 +43,7 @@
 
 							<!-- Search -->
 								<section id="search" class="alt">
-									<form method="post" action="#">
+									<form id="searchForm" method="get" action="{{route('postagens.buscar')}}">
 										<input type="text" name="query" id="query" placeholder="Buscar" />
 									</form>
 								</section>
@@ -73,6 +74,7 @@
 			<script src="{{asset('assets/js/breakpoints.min.js')}}"></script>
 			<script src="{{asset('assets/js/util.js')}}"></script>
 			<script src="{{asset('assets/js/main.js')}}"></script>
+			<script src="{{asset('assets/js/custom.js')}}"></script>
 
 	</body>
 </html>
