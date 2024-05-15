@@ -102,6 +102,21 @@ class PostController extends Controller
 
         return view('postagens.browse', compact('postagens'));
     }
+
+    public function mostrarPorCategoria($id) {
+
+        $categoria=\App\Models\Category::find($id);
+
+    $posts = \App\Models\Post::where('category_id', $id)->get();
+    return view('postagens.categorias', compact('posts','categoria'));
+    }
+
+    public function mostrarPublicacao($slug){
+
+        $post=\App\Models\Post::where('slug',$slug)->first();
+        return view('postagens.publicacoes',compact('post'));
+    }
+
     public function buscarPorConteudo (Request $request) {
         //obtem o value do input com o name="filtro"
         $termoDeBusca = $request->input('query');
@@ -113,7 +128,7 @@ class PostController extends Controller
         })
         ->paginate();
 
-        return view('manuais.listagem', compact('postagens'));
+        return view('manuais.listagem', compact('postagens'))->with('query', $termoDeBusca);
     }
 
     public function publicar ($id) {

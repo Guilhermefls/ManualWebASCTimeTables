@@ -21,9 +21,11 @@
 
 							<!-- Header -->
 								<header id="header">
-									<figure>
-										<img class="imagem fit" id="LogoASC" src="{{asset('images/LogoASC.png')}}" alt="Logo aSc">
-									</figure>
+                                    <figure>
+                                        <a href="{{route('welcome')}}">
+										    <img class="imagem fit" id="LogoASC" src="{{asset('images/LogoASC.png')}}" alt="Logo aSc">
+                                        </a>
+                                    </figure>
 									<ul class="icons">
 										<li><a target="_blank" href="https://github.com/Guilhermefls/ManualWebASCTimeTables" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 							<!--		<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -44,8 +46,8 @@
 							<!-- Search -->
 								<section id="search" class="alt">
 									<form id="searchForm" method="get" action="{{route('postagens.buscar')}}">
-										<input type="text" name="query" id="query" placeholder="Buscar" />
-									</form>
+                                        <input type="text" name="query" id="query" placeholder="Buscar" value="{{ request()->get('query') }}" >
+                                    </form>
 								</section>
 							<!-- Menu -->
 								<nav id="menu">
@@ -57,7 +59,9 @@
 										<li>
 											<span class="opener">Restrições</span>
 											<ul>
-												<li><a href="/Templates/turmas.html">Turmas</a></li>
+												<li><a href="/restricoes/1">Professores</a></li>
+                                                <li><a href="/restricoes/2">Turmas</a></li>
+												<li><a href="/restricoes/3">Salas</a></li>
 
 											</ul>
 

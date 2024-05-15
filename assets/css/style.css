@@ -1,4 +1,8 @@
-img#LogoASC{
-    width: 13rem;
+img #LogoASC{
+    width: 53rem;
     height: 3rem;
+}
+figure a{
+    border-bottom:0;
+    color:red;
 }

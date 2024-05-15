@@ -1226,7 +1226,7 @@ input[type="radio"] + label:before {
     display: block; }
   .image.left, .image.right {
     max-width: 40%; }
-    .image.left img, .image.right img {
+    .image.left img, .image.right img {F
       width: 100%; }
   .image.left {
     float: left;
@@ -1906,7 +1906,7 @@ button,
     transform: scaleX(-1);
     color: #7f888f;
     content: '\f002';
-    cursor: default;
+    cursor: pointer !important;
     display: block;
     font-size: 1.5em;
     height: 2em;
