@@ -55,4 +55,15 @@ class Post extends \TCG\Voyager\Models\Post
     {
         return $this->belongsTo(Category::class,'category_id', 'id');
     }
+    public function getConteudo()
+    {
+
+        $texto=$this->body;
+        $rota=route('postagens.instrucoes');
+        if (mb_strpos($this->body, "cart&otilde;es avan&ccedil;ados") !== false) {
+            $texto = str_replace("cart&otilde;es avan&ccedil;ados", "<a href='$rota'>cart&otilde;es avan&ccedil;ados</a>",$texto);
+
+        }
+        return $texto;
+    }
 }

@@ -73,6 +73,10 @@ class PostController extends Controller
         //
     }
 
+    public function instrucoes(){
+        return view('postagens.instrucoes');
+    }
+
     public function buscarPorAutores (Request $request, $id) {
         //obtem o value do input com o name="filtro"
         $termoDeBusca = $request->input('filtro');
@@ -85,7 +89,23 @@ class PostController extends Controller
         ->where('author_id',$id)
         ->paginate();
 
+        //return view('postagens.browse', compact('postagens'));
         return view('postagens.browse', compact('postagens'));
+    }
+    public function buscartestee (Request $request, $id) {
+        //obtem o value do input com o name="filtro"
+        $termoDeBusca = $request->input('filtro');
+
+        //obter a postagem do banco de dados com o id = $id
+        $postagens = \App\Models\Post::publicados()
+        ->when($termoDeBusca, function ($query, $termoDeBusca) {
+            return $query->where('title', 'like', '%'.$termoDeBusca.'%');
+        })
+        ->where('author_id',$id)
+        ->paginate();
+
+        //return view('postagens.browse', compact('postagens'));
+        return response()->json($postagens);
     }
 
     public function buscarPorCategorias (Request $request, $id) {
@@ -124,7 +144,10 @@ class PostController extends Controller
         //obter a postagem do banco de dados com o id = $id
         $postagens = \App\Models\Post::publicados()
         ->when($termoDeBusca, function ($query, $termoDeBusca) {
-            return $query->where('body', 'like', '%'.$termoDeBusca.'%');
+            return $query->where(function($query) use ($termoDeBusca){
+                $query->where('body', 'like', '%'.$termoDeBusca.'%')
+                      ->orWhere('title', 'like', '%'.$termoDeBusca.'%');
+            });
         })
         ->paginate();
 

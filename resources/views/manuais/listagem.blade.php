@@ -3,11 +3,8 @@
 @foreach ($postagens as $manual)
 <section>
     <header class="main">
-        <h1>{{$manual->title}}</h1>
+        <a href="{{route("restricoes.mostrarPublicacao",["slug"=>$manual->slug])}}"><h2>{{$manual->title}}</h2></a>
     </header>
-
-    <span class="image main"><img src="{{Voyager::image($manual->image)}}" alt="" /></span>
-
     <p>{{$manual->excerpt}}</p>
 </section>
 

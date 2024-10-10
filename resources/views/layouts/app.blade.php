@@ -28,16 +28,13 @@
                                     </figure>
 									<ul class="icons">
 										<li><a target="_blank" href="https://github.com/Guilhermefls/ManualWebASCTimeTables" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-							<!--		<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-							-->
+
 									</ul>
 								</header>
-
-							@yield('content')
-						</div>
+                                <div id="conteudo">
+							        @yield('content')
+                                </div>
+                        </div>
 					</div>
 				<!-- Sidebar -->
 					<div id="sidebar">
@@ -56,16 +53,18 @@
 									</header>
 									<ul>
 										<li><a href="{{route('welcome')}}">Pagina inicial</a></li>
+										<li><a href="{{route('postagens.instrucoes')}}">Instruções gerais</a></li>
 										<li>
 											<span class="opener">Restrições</span>
 											<ul>
 												<li><a href="/restricoes/1">Professores</a></li>
-                                                <li><a href="/restricoes/2">Turmas</a></li>
-												<li><a href="/restricoes/3">Salas</a></li>
+                                                <li><a href="/restricoes/3">Disciplinas</a></li>
+                                                <li><a href="/restricoes/4">Turmas</a></li>
+                                                <li><a href="/restricoes/2">Salas</a></li>
 
-											</ul>
-
+									        </ul>
 										</li>
+                                    </ul>
                                 </nav>
 						</div>
 					</div>

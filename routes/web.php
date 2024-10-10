@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
+use TCG\Voyager\Facades\Voyager;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,8 +37,10 @@ Route::resource('postagens', PostController::class)->only([
 ]);
 
 Route::get('/postagens/autores/{id}',[PostController::class, 'buscarPorAutores'])->name('postagens.autores');
+Route::get('/postagens/teste/{id}',[PostController::class, 'buscartestee'])->name('postagens.teste');
 Route::get('/postagens/categorias/{id}',[PostController::class, 'buscarPorCategorias'])->name('postagens.categorias');
 Route::get('/postagens/{id}/publicar',[PostController::class, 'publicar'])->name('postagens.publicar');
+Route::get('/instrucoes',[PostController::class,'instrucoes'])->name('postagens.instrucoes');
 
 Route::get('/restricoes/{id}', [PostController::class, 'mostrarPorCategoria'])->whereNumber('id')->name('restricoes.mostrarPorCategoria');
 Route::get('/restricoes/{slug}', [PostController::class, 'mostrarPublicacao'])->name('restricoes.mostrarPublicacao');
