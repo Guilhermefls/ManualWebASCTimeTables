@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Tutorial Timetables</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/style.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<figure>
+										<a href="../index.html">
+                                            <img class="imagem fit" id="LogoASC" src="../images/LogoASC.png" alt="Logo aSc">
+                                        </a>
+									</figure>
+									<ul class="icons">
+										<li><a target="_blank" href="https://github.com/Guilhermefls/ManualWebASCTimeTables" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									</ul>
+								</header>
+
+                                <div id="conteudo">
+									<h4>Detalhes do post:</h4>
+									<div>
+										<h2>Alocação Consecutiva de Cartões Divididos no Mesmo Período:</h2>
+										<p><b>Descrição:</b>Cartões divididos de uma mesma disciplina devem estar seguidos caso sejam alocados em um mesmo período (ex: MATUTINO)</p>
+									</div>
+									<hr>
+									<div>
+										<p dir="ltr">Para resolver esse tipo de situação devemos restringir a colocação dos cartões das aulas usando as relações entre <a href="instrucoesGerais.html">cartões avançados</a> (imagem “acesso a aba de restrições avançadas”).</p>
+										<p dir="ltr"><img src="../images/restricaoDisciplina1.png" width="602" height="339.14755031136656"></p>
+										<p dir="ltr">1- selecione o tipo de restrição “Máximo de janelas por dia&nbsp; (#4)” na caixa de texto logo abaixo selecione o número 0 ( para que não haja janelas entre os cartões de aulas divididos).</p>
+										<p dir="ltr">2- Selecione a opção “Aplicar às disciplinas selecionadas nas turmas selecionadas”</p>
+										<p dir="ltr">3- Utilize os filtros “Modificar Professores” e “Modificar Disciplinas” incluindo todos os professores e disciplinas; Utilize o&nbsp; filtro “Modificar Turmas” para selecionar todas as turmas, exceto aquelas que não devem obrigatoriamente atender a essa restrição (ex: turmas de dependências, EADs).</p>
+										<p dir="ltr">Selecione no quadro de horários os dias e períodos correspondentes a um turno do dia, no exemplo da imagem selecionamos o turno matutino, pois não há problema em existir no horários cartões separados entre matutino e vespertino/noturno, ou seja, uma aula dada na manhã na turma X pode ser dada a tarde na turma X sem problema algum, por consequência para que a restrição possa atender as aulas nos turnos vespertinos e noturno, devem ser criadas outras duas restrições iguais a esta (uma para o vespertino e outra para o noturno), mudando apenas os períodos selecionados no quadro de horários(no vespertino seleciona-se os períodos da tarde e no noturno os da noite).</p>
+										<p dir="ltr">4- Selecione a importância da Restrição, entre: baixa, normal, alta, rigoroso ou otimizar; de acordo com a importância a ser atribuída a essa relação na instituição.</p>
+										<p dir="ltr">Também escreva uma observação que facilite a identificação da restrição e explique seu objetivo.</p>
+										<p dir="ltr">Clique em “ok” no canto inferior para salvar a relação.</p>
+										<p>&nbsp;</p>
+									</div>
+								</div>
+						</div>
+					</div>
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Buscar" />
+									</form>
+								</section>
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="../index.html">Pagina inicial</a></li>
+										<li><a href="instrucoesGerais.html">Instruções Gerais</a></li>
+										<li>
+											<span class="opener active">Restrições</span>
+											<ul>
+												<li><a href="professores.html">Professores</a></li>
+												<li><a href="disciplinas.html">Disciplinas</a></li>
+												<li><a href="turmas.html">Turmas</a></li>
+												<li><a href="salas.html">Salas</a></li>
+											</ul>
+
+										</li>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

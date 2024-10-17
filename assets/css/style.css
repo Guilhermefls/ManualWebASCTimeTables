@@ -2,3 +2,6 @@ img#LogoASC{
     width: 13rem;
     height: 3rem;
 }
+#header a{
+    border-bottom: none;
+}
